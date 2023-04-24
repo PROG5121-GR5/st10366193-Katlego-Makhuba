@@ -1,0 +1,99 @@
+
+package javaapplication2;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+public class JavaApplication2 {
+    private static final String FULLNAME = "Katlego Makhuba";
+    private static final String USERNAME = "kat_1";
+    private static final String PASSWORD  = "K@lego89";
+    
+    private static final int username_length = 5;
+    
+    public static boolean checkUserName(String username){
+        if (username.length() <=5 && username.contains("_")){
+            System.out.println("Username is correct");
+            
+            return true;
+        }
+        else{
+            System.out.println("Username is incorrect");
+            return false;
+        }
+    }
+    public static  boolean checkPasswordComplexity(String password){
+        boolean lengthofpassword = false;
+        boolean Uppercase = false;
+        boolean digits = false ;
+        boolean hasspecialcharacters= false ;
+        
+
+        Pattern specialcharacters= Pattern.compile("!@#$%^&*()_+`-=[]{}\\,./<>?|:");
+         
+        if(specialcharacters.matcher(password).find()){
+            hasspecialcharacters = true;
+            
+        }
+       
+        int i = 0;
+            char c = password.charAt(i);
+        boolean specialcharacter = false;
+            
+            if(specialcharacter.isUppercase(c)) {
+        } else {
+                
+        }
+            boolean hasUppercase = true;    
+        return false;
+        
+          
+    }else(Character.isDigit (c));
+ 
+        boolean hasdigits = true;
+        
+                
+                
+        if(password.length()<=5){
+                    boolean passwordlength = true;
+             
+        }
+        boolean hasUppercase = false;
+            boolean passwordlength = false;
+            boolean hasspecialcharacters = false;
+              
+        return passwordlength && hasUppercase && hasdigits && hasspecialcharacters;
+    }
+    public static void main(String[] args){
+        Scanner input = new Scanner (System.in);
+        
+        String fullname;
+        System.out.println("Enter fullname");
+        fullname = input.nextLine();
+        
+        String username;
+        System.out.println("Enter username");
+        username = input.nextLine();
+        
+        String password;
+        System.out.println("Enter password");
+        password = input.nextLine();
+        
+        if(isValid(fullname,username,password)){
+            System.out.println("== Login successful");      
+        }else{
+            System.out.println("== wrong username or password");
+        }
+             
+      
+    }
+    private static boolean isValid (String username,String password, String fullname){
+        return username.equals(USERNAME)&& password.equals(PASSWORD)&&fullname.equals(FULLNAME);
+       
+       
+    }
+
+    private static class c {
+
+        public c() {
+        }
+    }
+}
